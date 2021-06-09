@@ -1,97 +1,99 @@
-# HTML Basics
+# HTML Básico
 
-HTML is a standard defined by the **WHATWG**, an acronym for Web Hypertext Application Technology Working Group, an organization formed by people working on the most popular web browser. This means it's basically controlled by Google, Mozilla, Apple and Microsoft.
+HTML é um padrão definido pelo **WHATWG**, um acrônimo para Web Hypertext Application Technology Working Group, uma organização formada por pessoas trabalhando nos navegadores web mais populares. Isto significa que basicamente é contolado por Google, Mozilla, Apple e Microsoft. 
 
-In the past the **W3C** (World Wide Web Consortium) was the organization in charge of creating the HTML standard.
+No passado, a **W3C** (World Wide Web Consortium) era a organização responsável por criar os padrões HTML.
 
-The control informally moved from W3C to WHATWG when it became clear that the W3C push towards XHTML was not a good idea.
+O controle informalmente mudou da W3C para WHATWG quando ficou claro que a investida da W3C para o XHTML não era uma boa idéia.
 
-If you've never heard of XHTML, here's a short story. In the early 2000s, we all believed the future of the Web was XML (seriously). So HTML moved from being an SGML-based authoring language to an XML markup language.
+Se você nunca ouviu falar sobre XHTML, aqui vai uma breve história. No incício dos anos 2000, nós acreditávamos que o futuro da Web era o XML (é sério). Então, o HTML mudou de uma linguagem de autoria baseada em SGML para uma linguagem de marcação XML.
 
-It was a big change. We had to know, and respect, more rules. Stricter rules.
+Essa foi uma grande mudança. Nós tínhamos que conhecer, e respeitar mais regras. Regras mais rígidas.
 
-Eventually browser vendors realized this was not the right path for the Web, and they pushed back, creating what is now known as HTML5.
+No fim, as empresas de navegadores perceberam que este não era o caminho correto para a Web, e voltaram atrás, criando aquilo que é conhecido como HTML5.
 
-W3C did not really agree on giving up control of HTML, and for years we had 2 competing standards, each one aiming to be the official one. Eventually on 28 May 2019 it was made official by W3C that the "true" HTML version was the one published by WHATWG.
+O W3C não concordou em perder o controle do HTML, e por anos nós tivemos 2 padrões competindo, cada um almejando ser o oficial.
+Por fim, em 28 de maio de 2019, foi declarado oficialmente pela W3C que a "verdadeira" versão do HTML era aquela publicada pela WHATWG.
 
-I mentioned HTML5. Let me explain this little story. I know, it's kind of confusing up to now, as with many things in life when many actors are involved, yet it's also fascinating.
+Eu mencionei HTML5. Deixe-me explicar isso. Eu sei, é um pouco confuso, como ocorre com muitas coisas na vida em que muitos atores estão envolvidos, mas também é fascinante. 
 
-We had **HTML version 1** in 1993. [Here's the original RFC](https://tools.ietf.org/html/rfc1983).
+Nós tínhamos o **HTML versão 1** em 1993. [Aqui está o RFC original](https://tools.ietf.org/html/rfc1983).
 
-**HTML 2** followed in 1995.
+Em seguida, o **HTML 2** em 1995.
 
-We got **HTML 3** in January 1997, and **HTML 4** in December 1997.
+Tivemos o **HTML3** em janeiro de 1997, e o **HTML4** em dezembro de 1997.
 
-Busy times!
+Época movimentada!
 
-20+ years went by, we had this entire XHTML thing, and eventually we got to this HTML5 "thing", which is not really _just HTML_ any more.
+Mais de 20 anos se passaram, nós passamos por toda essa questão do XHTML, e por fim chegamos a essa "coisa" do HTML5, que não é mais realmente _apenas HTML_.
 
-HTML5 is a term that now defines a whole set of technologies, which includes HTML but adds a lot of APIs and standards like WebGL, SVG and more.
+O HTML agora é um termo que define todo um conjunto de tecnologias, que inclui HTML, mas adiciona um monte de APIs e padrões como WebGL, SVG e mais.
 
-The key thing to understand here is this: there is no such thing (any more) as an HTML version now. It's a living standard. Like CSS, which is called "3", but in reality is a bunch of independent modules developed separately. Like JavaScript, where we have one new edition each year, but nowadays, the only thing that matters is which individual features are implemented by the engine.
+O ponto chave para entender é: não existe (mais) uma versão do HTML. Ele é um padrão vivo. Tal como o CSS, que é chamado de "3", mas na verdade é um monte de módulos independentes desenvolvidos separadamente. Como o Javascript, onde temos uma nova edição a cada ano, mas hoje, a única coisa que interessa é que funcionalidades individuais são implementadas pela engine.
 
-Yes we call it HTML5, but HTML4 is from 1997. That's a long time for anything, let alone for the web.
+Sim, chamamos de HTML5, mas HTML4 é de 1997. Isso é muito tempo para qualquer coisa, ainda mais para a web.
 
-This is where the standard now "lives": [https://html.spec.whatwg.org/multipage](https://html.spec.whatwg.org/multipage).
+Aqui está onde o padrão agora "reside": [https://html.spec.whatwg.org/multipage](https://html.spec.whatwg.org/multipage).
 
-HTML is the markup language we use to structure content that we consume on the Web.
 
-HTML is served to the browser in different ways.
-* It can be generated by a server-side application that builds it depending on the request or the session data, for example a Rails or Laravel or Django application.
-* It can be generated by a JavaScript client-side application that generates HTML on the fly.
-* In the simplest case, it can be stored in a file and served to the browser by a Web server.
+HTML é a linguagem de marcação que usamos para estruturar o conteúdo que consumimos na Web.
 
-Let's dive into this last case. Although in practice it's probably the least popular way to generate HTML, it's still essential to know the basic building blocks.
+O HTML é oferecido ao navegador de diferentes formas.
+* Pode ser gerado pelo lado do servidor da aplicação, que o monta a depender da requisição ou dos dados da sessão, como por exemplo uma aplicação em Rails, Laravel ou Django.
+* Pode ser gerado por uma aplicação Javascript do lado do cliente, que gera o HTML na hora.
+* No caso mais simples, pode ser armazenado em um arquivo e servido ao navegador por um servidor Web.
 
-By convention, an HTML file is saved with a `.html` or `.htm` extension.
+Vamos nos aprofundar neste último caso. Apesar de que na prática essa seja a maneira menos popular de gerar HTML, ainda é essencial saber os blocos de construção básicos.
 
-Inside this file, we organize the content using **tags**.
+Por convenção, um arquivo HTML é salvo com uma extensão `.html` ou `.htm`.
 
-Tags wrap the content, and each tag gives a special meaning to the text it wraps.
+Dentro deste arquivo, nós organizamos o conteúdo usando **tags**.
 
-Let's make a few examples.
+Tags envolvem o conteúdo, e cada tag dá um sentido especial ao texto que ela envolve.
 
-This HTML snippet creates a paragraph using the `p` tag:
+Vamos ver alguns exemplos.
+
+Este snippet HTML cria um parágrafo utilizando a tag `p`:
 
 ```html
-<p>A paragraph of text</p>
+<p>O texto de um parágrafo</p>
 ```
 
-This HTML snippet creates a list of items using the `ul` tag, which means *unordered list*, and the `li` tags, which mean *list item*:
+Este snippet HTML cria uma lista de items usando a tag `ul`, que significa *lista não-ordenada*, e tags `li`, que significa *item de lista*:
 
 ```html
 <ul>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
+  <li>Primeiro item</li>
+  <li>Segundo item</li>
+  <li>Terceiro item</li>
 </ul>
 ```
+Quando uma página HTML é servida ao navegador, as tags são interpretadas, e o navegador renderiza os elementos de acordo com as regras que definem a sua aparência visual.
 
-When an HTML page is served by the browser, the tags are interpreted, and the browser renders the elements according to the rules that define their visual appearance.
+Algumas dessas regras são internas, como o modo que uma lista é renderizada ou o modo como um link é sublinhado em azul.
 
-Some of those rules are built-in, such as how a list renders or how a link is underlined in blue.
+Algumas outras regras são definidas por você com o CSS.
 
-Some other rules are set by you with CSS.
+HTML não é de apresentação. Ele não se preocupa com a forma como as coisas *se mostram*. Ao invés disso, se preocupa com o que as coisas *significam*.
 
-HTML is not presentational. It's not concerned with how things *look*. Instead, it's concerned with what things *mean*.
+Fica a cargo do navegador determinar como as coisas se mostram, com as diretivas definidas por quem constrói a página, usando a linguagem CSS.
 
-It's up to the browser to determine how things look, with the directives defined by who builds the page, with the CSS language.
+Agora, aqueles dois exemplos que fiz são snippets HTML tirados do contexto de uma página.
 
-Now, those two examples I made are HTML snippets taken outside of a page context.
 
-### HTML page structure
+### Estrutura de página HTML
 
-Let's make an example of a proper HTML page.
+Vamos criar um exemplo de uma página HTML adequada.
 
-Things start with the Document Type Declaration (aka _doctype_), a way to tell the browser this is an HTML page, and which version of HTML we are using.
+As coisas começam com a Declaração do Tipo de Documento (conhecido como _doctype_), que é um modo de dizer ao navegador que isso é uma página HTML, e qual versão do HTML estamos usando.
 
-Modern HTML uses this doctype:
+O HTML moderno utiliza este doctype:
 
 ```html
 <!DOCTYPE html>
 ```
 
-Then we have the `html` element, which has an opening and closing tag:
+E então nós temos o elemento `html`, o qual possui uma tag de abertura e de fechamento:
 
 ```html
 <!DOCTYPE html>
@@ -100,18 +102,19 @@ Then we have the `html` element, which has an opening and closing tag:
 </html>
 ```
 
-Most tags come in pairs with an opening tag and a closing tag. The closing tag is written the same as the opening tag, but with a `/`:
+A maioria das tags vêm em pares com uma tag de abertura e uma tag de fechamento. A tag de fechamento é escrita da mesma maneira que a tag de abertura, mas com uma barra `/`:
+
 
 ```html
-<sometag>some content</sometag>
+<algumatag>algum conteúdo</algumatag>
 ```
-There are a few self-closing tags, which means they don't need a separate closing tag as they don't contain anything _in them_.
+Existem algumas tags auto-fechadas, o que significa que elas não precisam de uma tag de fechamento, já que elas não contêm nada _dentro delas_.
 
-The `html` starting tag is used at the beginning of the document, right after the document type declaration.
+A tag inicial `html` é usada no começo do documento, logo após a declaração do tipo do documento.
 
-The `html` ending tag is the last thing present in an HTML document.
+A tag de fechamento `html` é a última coisa presente em um documento HTML.
 
-Inside the `html` element we have 2 elements: `head` and `body`:
+Dentro do elemento `html` nós temos 2 elementos: `head` e `body`:
 
 ```html
 <!DOCTYPE html>
@@ -125,146 +128,150 @@ Inside the `html` element we have 2 elements: `head` and `body`:
 </html>
 ```
 
-Inside `head` we will have tags that are essential to creating a web page, like the title, the metadata, and internal or external CSS and JavaScript. Mostly things that do not directly appear on the page, but only help the browser (or bots like the Google search bot) display it properly.
+Dentro do `head` nós vamos ter tags que são essenciais para criar uma página web, como o título, os metadados, e CSS e Javascript interno ou externo. Principalmente as coisas que não aparecem diretamente na página, e que apenas ajudam o navegador (ou bots como o bot de busca da Google) a mostrar essas coisas na tela adequadamente.
 
-Inside `body` we will have the content of the page. The **visible stuff**.
+Dentro do `body` nós vamos ter o conteúdo da página. As **coisas visíveis**.
 
-### Tags vs elements
+### Tags vs elementos
 
-I mentioned tags and elements. What's the difference?
+Eu mencionei tags e elementos. Qual a diferença?
 
-Elements have a starting tag and a closing tag. In this example, we use the `p` starting and closing tags to create a `p` element:
-
-```html
-<p>A paragraph of text</p>
-```
-
-So, an element constitutes the whole _package_:
-
-- starting tag
-- text content (and possibly other elements)
-- closing tag
-
-If an element has doesn't have a closing tag, it is only written with the starting tag, and it cannot contain any text content.
-
-That said, I might use the tag or element term in the book meaning the same thing, except if I explicitly mention starting tag or ending tag.
-
-### Attributes
-
-The starting tag of an element can have special snippets of information we can attach, called **attributes**.
-
-Attributes have the `key="value"` syntax:
+Elementos possuem uma tag de abertura e de fechamento. Neste exemplo, usamos as tags de abertura e fechamento `p` para criar um elemento `p`:
 
 ```html
-<p class="a-class">A paragraph of text</p>
+<p>Um parágrafo de texto</p>
 ```
 
-> You can also use single quotes, but using double quotes in HTML is a nice convention.
+Então, um elemento constitui todo o _pacote_:
 
-We can have many of them:
+- tag de abertura
+- conteúdo de texto (e possivelmentes outros elementos)
+- tag de fechamento
+
+Caso um elemento não possua uma tag de fechamento, ele é escrito apenas com a tag de abertura, e não pode conter nenhum conteúdo de texto.
+
+Dito isto, eu posso usar o termo tag ou elemento neste livro significando a mesma coisa, exceto se eu explicitamente mencionar tag de abertura ou tag de fechamento.
+
+### Atributos
+
+A tag de abertura de um elemento pode ter snippets especiais de informação que podemos incluir, chamados **atributos**.
+
+Atributos possuem a sintaxe `chave="valor"`:
+
 
 ```html
-<p class="a-class" id="an-id">A paragraph of text</p>
+<p class="uma-classe">Um parágrafo de texto</p>
 ```
 
-and some attributes are boolean, meaning you only need the key:
+> Você também pode usar aspas simples, mas usar aspas duplas em HTML é uma boa convenção.
+
+Podemos ter várias delas:
+
+```html
+<p class="uma-classe" id="uma-id">Um parágrafo de texto</p>
+```
+
+e alguns atributos são booleanos, o que quer dizer que você precisa apenas da chave:
+
 
 ```html
 <script defer src="file.js"></script>
 ```
 
-The `class` and `id` attributes are two of the most common you will find used.
+Os atributos `class` e `id` são dois dos atributos mais comuns que você vai encontrar.
 
-They have a special meaning, and they are useful both in CSS and JavaScript.
+Eles possuem um significado especial, e são úteis em CSS e Javascript.
 
-The difference between the two is that an `id` is unique in the context of a web page; it cannot be duplicated.
+A diferença entre os dois é que uma `id` é única no contexto da página web; ela não pode estar duplicada.
 
-Classes, on the other hand, can appear multiple times on multiple elements.
+Classes, por outro lado, podem aparecer várias vezes em vários elementos.
 
-Plus, an `id` is just one value. `class` can hold multiple values, separated by a space:
+Além disso, uma `id` é apenas um valor. `class` pode conter vários valores, separados por um espaço:
 
 ```html
-<p class="a-class another-class">A paragraph of text</p>
+<p class="uma-classe outra-classe">Um parágrafo de texto</p>
 ```
 
-It's common to use the dash `-` to separate words in a class value, but it's just a convention.
+É comum usar o traço `-` para separar palavras no valor da classe, mas é apenas uma convenção.
 
-Those are just two of the possible attributes you can have. Some attributes are only used for one tag. They are highly specialized.
+Esses são apenas dois dos atributos possíveis que você pode usar. Alguns atributos são usados apenas em uma tag. Eles são altamente especializados.
 
-Other attributes can be used in a more general way. You just saw `id` and `class`, but we have other ones too, like `style` which can be used to insert inline CSS rules on an element.
+Outros atributos podem ser usados de maneira mais geral. Você viu apenas `id` e `class`, mas temos outros também, como `style`, que pode ser usado para inserir regras inline (na própria linha) de CSS em um elemento.
+
 
 ### Case insensitive
 
-HTML is case insensitive. Tags can be written in all caps, or lowercase. In the early days, caps were the norm. Today lowercase is the norm. It is a convention.
+HTML é _case insensitive_. Tags podem ser escritas em letras maiúsculas ou minúsculas. Tempos atrás, letras maiúsculas eram a regra. Hoje letras minúsculas são a regra. É uma convenção.
 
-You usually write like this:
-
-```html
-<p>A paragraph of text</p>
-```
-
-not like this:
+Você geralmente escreve assim:
 
 ```html
-<P>A paragraph of text</P>
+<p>Um parágrafo de texto</p>
 ```
 
-### White space
-
-Pretty important. In HTML, even if you add multiple white spaces into a line, it's collapsed by the browser's CSS engine.
-
-For example the rendering of this paragraph
+e não escreve assim:
 
 ```html
-<p>A paragraph of text</p>
+<P>Um parágrafo de texto</P>
 ```
 
-is the same as this:
+### Espaço em branco
+
+Isso é muito importante. Em HTML, mesmo que você adicione múltiplos espaços em branco em uma linha, eles são retirados pela engine CSS do navegador. 
+
+Por exemplo a renderização deste parágrafo:
 
 ```html
-<p>        A paragraph of text</p>
+<p>Um parágrafo de texto</p>
 ```
 
-and the same as this:
+é o mesmo que isso:
 
 ```html
-<p>A paragraph
-
-of
-           text          </p>
+<p>      Um parágrafo de texto</p>
 ```
 
-> Using the [`white-space` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) you can change how things behave. You can find more information on how CSS processes white space in the [CSS Spec](https://www.w3.org/TR/CSS2/text.html#white-space-model)
-
-I'd say use the syntax that makes things visually more organized and easier to read, but you can use any syntax you like.
-
-I typically favor
+e o mesmo que isso:
 
 ```html
-<p>A paragraph of text</p>
+<p>Um parágrafo
+
+de
+           texto          </p>
 ```
 
-or
+> Usando a [propriedade CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) `white-space` você pode alterar esse comportamento. Você pode encontrar mais informação de como o CSS processa espaços em branco na [Documentação CSS](https://www.w3.org/TR/CSS2/text.html#white-space-model)
+
+Eu diria para usar a sintaxe que deixe as coisas visualmente mais organizadas e mais fáceis de ler, mas você pode usar a sintaxe que preferir.
+
+
+Eu normalmente prefiro:
+
+```html
+<p>Um parágrafo de texto</p>
+```
+
+ou
 
 ```html
 <p>
-	A paragraph of text
+	Um parágrafo de texto
 </p>
 ```
 
-Nested tags should be indented with 2 or 4 characters, depending on your preference:
+Tags aninhadas devem ser identadas com 2 ou 4 caracteres, a depender da sua preferência:
 
 ```html
 <body>
 	<p>
-		A paragraph of text
+		Um parágrafo de texto
 	</p>
 	<ul>
-		<li>A list item</li>
+		<li>Um item de lista</li>
 	</ul>
 </body>
 ```
 
-> Note: this "white space is not relevant" feature means that if you want to add additional space, it can make you pretty mad. I suggest you use CSS to make more space when needed.
+> Nota: esta funcionalidade "espaço em branco não é relevante" significa que caso você queira adicionar mais espaço, isso pode deixar tudo bem ruim. Eu sugiro que você use o CSS para criar mais espaço quando necessário. 
 
-> Note: in special cases, you can use the `&nbsp;` HTML entity (an acronym that means _non-breaking space_) - more on HTML entities later on. I think this should not be abused. CSS is always preferred to alter the visual presentation.
+> Nota: em casos especiais, você pode usar a entidade HTML `&nbsp;` (um acrônimo que significa _non-breaking space_) - mais informações sobre entidades HTML posteriormente. Penso que isto não deve ser abusado. O CSS é sempre o preferido para alterar a apresentação visual.
